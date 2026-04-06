@@ -47,6 +47,7 @@ if fs.platform().is_win then
 end
 
 Config.default_cwd = fs.home()
+Config.send_composed_key_when_left_alt_is_pressed = false
 
 -- ref: https://wezfurlong.org/wezterm/config/lua/SshDomain.html
 Config.ssh_domains = {}

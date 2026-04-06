@@ -48,6 +48,10 @@ local mappings = {
     "new window",
   },
 
+  ---word jump
+  { "<M-LeftArrow>", act.SendString "\x1bb", "word left" },
+  { "<M-RightArrow>", act.SendString "\x1bf", "word right" },
+
   ---quick split and nav
   { '<C-S-">', act.SplitHorizontal { domain = "CurrentPaneDomain" }, "vsplit" },
   { "<C-S-%>", act.SplitVertical { domain = "CurrentPaneDomain" }, "hsplit" },
