@@ -19,6 +19,10 @@
     "skill-creator@claude-plugins-official": true,
     "jenkins-debug@ias-claude-code-skills": true
   },
+  "statusLine": {
+    "type": "command",
+    "command": "sh /Users/kshetty/.claude/statusline-command.sh"
+  },
   "extraKnownMarketplaces": {
     "ias-claude-code-skills": {
       "source": {
