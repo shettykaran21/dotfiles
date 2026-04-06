@@ -265,7 +265,7 @@ e.set_right_status = function(Config, window, pane)
   local fancy_bg = Config.window_frame.active_titlebar_bg
   local last_fg = Config.use_fancy_tab_bar and fancy_bg or e.theme.tab_bar.background
 
-  local sets = { cwd_cells, time_cells }
+  local sets = { time_cells }
   if battery then
     tinsert(sets, battery.cells)
   end
