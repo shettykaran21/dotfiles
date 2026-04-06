@@ -2,3 +2,17 @@
 .config/zsh/.zcompdump*
 .config/zsh/.zsh_sessions/
 .config/zsh/.zsh_history
+
+# claude
+.claude/projects/
+.claude/sessions/
+.claude/history.jsonl
+.claude/cache/
+.claude/backups/
+.claude/file-history/
+.claude/shell-snapshots/
+.claude/tasks/
+.claude/telemetry/
+.claude/session-env/
+.claude/plans/
+.claude/debug/

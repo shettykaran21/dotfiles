@@ -1,0 +1,21 @@
+{
+  "apiKeyHelper": "/Users/kshetty/.claude/databricks-api-key-helper.sh",
+  "env": {
+    "ENABLE_TOOL_SEARCH": "false",
+    "ANTHROPIC_BASE_URL": "https://ias-sandbox-dev.cloud.databricks.com/serving-endpoints/anthropic",
+    "ANTHROPIC_MODEL": "claude_code_sonnet_4_6",
+    "ANTHROPIC_API_URL": "https://ias-sandbox-dev.cloud.databricks.com/serving-endpoints/claude_code_sonnet_4_6/invocations",
+    "ANTHROPIC_CUSTOM_HEADERS": "x-databricks-disable-beta-headers: true",
+    "DATABRICKS_WORKSPACE_URL": "https://ias-sandbox-dev.cloud.databricks.com",
+    "DATABRICKS_PROFILE": "claude",
+    "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1",
+    "CLAUDE_CODE_API_KEY_HELPER_TTL_MS": "5000",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude_code_haiku_4_5",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude_code_sonnet_4_6",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude_code_opus_4_6"
+  },
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true
+  }
+}
