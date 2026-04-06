@@ -1,3 +1,4 @@
 # zsh
 .config/zsh/.zcompdump*
 .config/zsh/.zsh_sessions/
+.config/zsh/.zsh_history
