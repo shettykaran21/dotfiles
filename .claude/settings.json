@@ -16,6 +16,15 @@
   },
   "enabledPlugins": {
     "context7@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true
+    "skill-creator@claude-plugins-official": true,
+    "jenkins-debug@ias-claude-code-skills": true
+  },
+  "extraKnownMarketplaces": {
+    "ias-claude-code-skills": {
+      "source": {
+        "source": "github",
+        "repo": "integralads/ias-claude-code-skills"
+      }
+    }
   }
 }
