@@ -12,7 +12,8 @@
     "CLAUDE_CODE_API_KEY_HELPER_TTL_MS": "5000",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude_code_haiku_4_5",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude_code_sonnet_4_6",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude_code_opus_4_6"
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude_code_opus_4_6",
+    "DISABLE_AUTOUPDATER": "1"
   },
   "enabledPlugins": {
     "context7@claude-plugins-official": true,
