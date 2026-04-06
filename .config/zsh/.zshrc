@@ -70,6 +70,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-bat nvm zsh-nvm)
 
 HISTFILE="$ZDOTDIR/.zsh_history"
+ZSH_COMPDUMP="$ZDOTDIR/.zcompdump"
 
 source $ZSH/oh-my-zsh.sh
 
