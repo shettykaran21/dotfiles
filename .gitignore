@@ -2,6 +2,10 @@
 .config/zsh/.zcompdump*
 .config/zsh/.zsh_sessions/
 .config/zsh/.zsh_history
+.oh-my-zsh/
+
+# credentials
+.databrickscfg
 
 # claude
 .claude/projects/
