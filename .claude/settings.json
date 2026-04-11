@@ -15,14 +15,14 @@
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude_code_opus_4_6",
     "DISABLE_AUTOUPDATER": "1"
   },
+  "statusLine": {
+    "type": "command",
+    "command": "sh /Users/kshetty/.claude/statusline-command.sh"
+  },
   "enabledPlugins": {
     "context7@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "jenkins-debug@ias-claude-code-skills": true
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "sh /Users/kshetty/.claude/statusline-command.sh"
   },
   "extraKnownMarketplaces": {
     "ias-claude-code-skills": {
@@ -31,5 +31,6 @@
         "repo": "integralads/ias-claude-code-skills"
       }
     }
-  }
+  },
+  "model": "sonnet[1m]"
 }
