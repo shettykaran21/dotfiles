@@ -103,6 +103,9 @@ cat ~/.kube/config;"
 # Dotfiles bare repo alias
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# uv
+export PATH="/Users/kshetty/.local/bin:$PATH"
+
 # This must be at the end of th file for SDKMAN to work!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

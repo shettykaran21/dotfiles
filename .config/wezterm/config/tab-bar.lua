@@ -1,6 +1,6 @@
 local Config = {}
 
-Config.enable_tab_bar = true
+Config.enable_tab_bar = false
 Config.hide_tab_bar_if_only_one_tab = false
 Config.show_new_tab_button_in_tab_bar = false
 Config.show_tabs_in_tab_bar = false

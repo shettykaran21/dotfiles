@@ -37,7 +37,7 @@ Config.default_cursor_style = "SteadyBlock"
 Config.cursor_thickness = 1
 Config.force_reverse_video_cursor = true
 
-Config.enable_scroll_bar = true
+Config.enable_scroll_bar = false
 
 Config.hide_mouse_cursor_when_typing = true
 
@@ -60,7 +60,7 @@ Config.visual_bell = {
 
 ---window appearance
 Config.window_decorations = "RESIZE"
-Config.window_padding = { left = 2, right = 2, top = 2, bottom = 1 }
+Config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 
 ---exit behavior
 Config.clean_exit_codes = { 130 }
