@@ -7,6 +7,9 @@
 # credentials
 .databrickscfg
 
+# nvim
+.config/nvim/.claude/
+
 # claude
 .claude/projects/
 .claude/sessions/
