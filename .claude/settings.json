@@ -9,13 +9,13 @@
     "DATABRICKS_WORKSPACE_URL": "https://ias-sandbox-dev.cloud.databricks.com",
     "DATABRICKS_PROFILE": "claude",
     "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1",
-    "CLAUDE_CODE_API_KEY_HELPER_TTL_MS": "5000",
+    "CLAUDE_CODE_API_KEY_HELPER_TTL_MS": "30000",
+    "CLAUDE_CODE_USE_BEDROCK": "0",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude_code_haiku_4_5",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude_code_sonnet_4_6",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude_code_opus_4_6",
-    "DISABLE_AUTOUPDATER": "1"
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude_code_opus_4_7"
   },
-  "model": "sonnet[1m]",
+  "model": "sonnet",
   "statusLine": {
     "type": "command",
     "command": "sh /Users/kshetty/.claude/statusline-command.sh"
