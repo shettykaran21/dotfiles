@@ -12,7 +12,14 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 # theme
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME=""
+
+# pure theme
+autoload -U promptinit; promptinit
+
+zstyle :prompt:pure:git:stash show yes
+
+prompt pure
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -105,6 +112,12 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # uv
 export PATH="/Users/kshetty/.local/bin:$PATH"
+
+# pure theme
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+
+# corepack npm registry
+export COREPACK_NPM_REGISTRY=https://nexus.303net.net/repository/npm-public/
 
 # This must be at the end of th file for SDKMAN to work!
 export SDKMAN_DIR="$HOME/.sdkman"
