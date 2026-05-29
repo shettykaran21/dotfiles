@@ -15,7 +15,7 @@
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude_code_sonnet_4_6",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude_code_opus_4_7"
   },
-  "model": "sonnet",
+  "model": "claude_code_sonnet_4_6",
   "statusLine": {
     "type": "command",
     "command": "sh /Users/kshetty/.claude/statusline-command.sh"
@@ -24,7 +24,8 @@
     "context7@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "jenkins-debug@ias-claude-code-skills": true,
-    "atlassian@claude-plugins-official": true
+    "atlassian@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "ias-claude-code-skills": {
