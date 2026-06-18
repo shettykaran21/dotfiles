@@ -107,6 +107,11 @@ aws sts get-caller-identity --profile saml;
 aws eks --region us-east-1 update-kubeconfig --name eng-k8s-prod-reporting-us-east-1-v3-eks --profile saml;
 cat ~/.kube/config;"
 
+alias eks-demo-v3="saml2aws login --force --skip-prompt --role=arn:aws:iam::454457967641:role/IAS-Engineering-Prod --profile saml;
+aws sts get-caller-identity --profile saml;
+aws eks --region us-east-1 update-kubeconfig --name owp-demo-prod-reporting-us-east-1-v3-eks --profile saml;
+cat ~/.kube/config;"
+
 # Dotfiles bare repo alias
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
