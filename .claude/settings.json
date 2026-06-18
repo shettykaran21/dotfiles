@@ -13,7 +13,7 @@
     "CLAUDE_CODE_USE_BEDROCK": "0",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude_code_haiku_4_5",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude_code_sonnet_4_6",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude_code_opus_4_7"
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude_code_opus_4_8"
   },
   "model": "claude_code_sonnet_4_6",
   "statusLine": {
