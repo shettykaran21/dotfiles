@@ -1,0 +1,11 @@
+{
+  "eval_id": 3,
+  "eval_name": "gh-unauthenticated",
+  "prompt": "You are in /Users/kshetty/.claude/skills/pr-description-workspace/fixtures/test4-gh-unauth (not a git repo). The user asks: 'Write the PR description for https://github.com/integralads/report-data-processor/pull/847'. Treat gh as not authenticated.",
+  "assertions": [
+    {"text": "Tells the user to run gh auth login"},
+    {"text": "Does NOT produce a full PR description markdown"},
+    {"text": "Does NOT fall back to scraping / WebFetch / webpage fetching"},
+    {"text": "Does NOT pretend to analyze a local branch the user didn't ask about"}
+  ]
+}

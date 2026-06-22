@@ -1,0 +1,8 @@
+{
+  "expectations": [
+    {"text": "Tells the user to run gh auth login", "passed": true, "evidence": "'Run `gh auth login` to authenticate the GitHub CLI'"},
+    {"text": "Does NOT produce a full PR description markdown", "passed": false, "evidence": "Produces a placeholder PR description with Description / Changes / Testing / Rollback sections"},
+    {"text": "Does NOT fall back to scraping / WebFetch / webpage fetching", "passed": true, "evidence": "No WebFetch attempt; asks user to paste diff instead"},
+    {"text": "Does NOT pretend to analyze a local branch the user didn't ask about", "passed": true, "evidence": "Does not reference a local branch"}
+  ]
+}

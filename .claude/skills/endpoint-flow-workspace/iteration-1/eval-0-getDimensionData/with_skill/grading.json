@@ -1,0 +1,36 @@
+{
+  "eval_id": "eval-0-getDimensionData",
+  "variant": "with_skill",
+  "expectations": [
+    {
+      "text": "Output contains a Flow Summary section",
+      "passed": true,
+      "evidence": "Found 'Flow Summary' heading"
+    },
+    {
+      "text": "Output contains a Call Chain section with at least 2 hops",
+      "passed": true,
+      "evidence": "Found Call Chain with arrows"
+    },
+    {
+      "text": "Output contains a DB Tables section with at least one table identified",
+      "passed": true,
+      "evidence": "Found DB Tables section with table rows"
+    },
+    {
+      "text": "Output contains a Mermaid sequence diagram block",
+      "passed": true,
+      "evidence": "Found ```mermaid block"
+    },
+    {
+      "text": "Mermaid diagram includes autonumber",
+      "passed": true,
+      "evidence": "Found autonumber in mermaid"
+    },
+    {
+      "text": "Call chain annotates DB calls with [DB READ or [DB WRITE",
+      "passed": true,
+      "evidence": "Found [DB READ/WRITE] annotation"
+    }
+  ]
+}

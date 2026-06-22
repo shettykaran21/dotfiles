@@ -1,0 +1,10 @@
+{
+  "expectations": [
+    {"text": "Includes markdown JIRA link to integralads.atlassian.net/browse/PORT-1783", "passed": true, "evidence": "Contains `[PORT-1783](https://integralads.atlassian.net/browse/PORT-1783)`"},
+    {"text": "Ticket ID is normalized to PORT-1783 (the -v2 suffix from the branch is stripped)", "passed": true, "evidence": "Ticket ID appears as PORT-1783 only; no -v2 variant in output"},
+    {"text": "Summary section uses bullet points (lines beginning with - or *)", "passed": true, "evidence": "## Summary contains bullets: `- Align column headers...`, `- Adds totalEligible...`"},
+    {"text": "Mentions column / header / metric alignment (the actual committed change)", "passed": true, "evidence": "First bullet: 'Align column headers with metrics in config.json'"},
+    {"text": "Flags application.yml as unstaged / out-of-scope / not part of the PR", "passed": true, "evidence": "'**Note:** src/main/resources/application.yml has unstaged changes... Make sure it stays out of this PR'"},
+    {"text": "Output includes a markdown code block for copy-paste", "passed": true, "evidence": "Output wrapped in ```markdown ... ``` fenced block"}
+  ]
+}

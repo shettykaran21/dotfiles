@@ -1,0 +1,13 @@
+{
+  "eval_id": 1,
+  "eval_name": "getMetricsDimensionReport",
+  "prompt": "what does DataService/getMetricsDimensionReport do and what tables does it touch? codebase is at /Users/kshetty/code/ias/fantastic-signals-data-warehouse",
+  "assertions": [
+    { "id": "has-flow-summary", "description": "Output contains a Flow Summary section" },
+    { "id": "has-call-chain", "description": "Output contains a Call Chain section with at least 2 hops" },
+    { "id": "has-db-tables", "description": "Output contains a DB Tables section with at least one table identified" },
+    { "id": "has-mermaid", "description": "Output contains a Mermaid sequence diagram block" },
+    { "id": "mermaid-autonumber", "description": "Mermaid diagram includes autonumber" },
+    { "id": "call-chain-db-annotation", "description": "Call chain annotates DB calls with [DB READ or [DB WRITE" }
+  ]
+}

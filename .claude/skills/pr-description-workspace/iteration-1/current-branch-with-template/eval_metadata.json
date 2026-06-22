@@ -1,0 +1,16 @@
+{
+  "eval_id": 1,
+  "eval_name": "current-branch-with-template",
+  "prompt": "You are in a git repo at /Users/kshetty/.claude/skills/pr-description-workspace/fixtures/test2-with-template. The current branch is feat/DDL-2026-fix-c-lvl-metrics. Fill in the pull request description for this branch using the repo's template.",
+  "assertions": [
+    {"text": "Preserves 'What does this PR do?' heading from template"},
+    {"text": "Preserves 'Why is this change needed?' heading from template"},
+    {"text": "Preserves 'How was this tested?' heading from template"},
+    {"text": "Preserves 'Rollback plan' heading from template"},
+    {"text": "Preserves 'Screenshots' heading from template"},
+    {"text": "Includes markdown JIRA link to integralads.atlassian.net/browse/DDL-2026"},
+    {"text": "Addresses the c_lvl metric change from commits"},
+    {"text": "Screenshots section is marked N/A or left empty (backend change, not UI)"},
+    {"text": "Testing section preserves checkbox format (- [ ])"}
+  ]
+}

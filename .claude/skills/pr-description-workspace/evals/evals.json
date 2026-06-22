@@ -1,0 +1,33 @@
+{
+  "skill_name": "pr-description",
+  "evals": [
+    {
+      "id": 0,
+      "name": "current-branch-no-template",
+      "prompt": "You are in a git repo at /Users/kshetty/.claude/skills/pr-description-workspace/fixtures/test1-no-template. The current branch is PORT-1783-column-headers-v2. Write a pull request description for this branch.",
+      "expected_output": "A markdown PR description that: uses the default template (since no pull_request_template.md exists), includes a JIRA link for PORT-1783 (normalized from the -v2 suffix), covers the committed change, and flags the unstaged application.yml change as out-of-scope.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "current-branch-with-template",
+      "prompt": "You are in a git repo at /Users/kshetty/.claude/skills/pr-description-workspace/fixtures/test2-with-template. The current branch is feat/DDL-2026-fix-c-lvl-metrics. Fill in the pull request description for this branch using the repo's template.",
+      "expected_output": "A PR description that preserves the template's sections (What does this PR do?, Why, How was this tested, Rollback plan, Screenshots), fills each with relevant content or _N/A_ for sections with no data, and includes a JIRA link for DDL-2026.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "existing-pr-body-merge",
+      "prompt": "You are in a git repo at /Users/kshetty/.claude/skills/pr-description-workspace/fixtures/test3-existing-body. The current branch is PORT-1900-retry-logic. The PR on GitHub already has this description:\n\n---\n## Summary\nAdds retry logic to the S3 uploader.\n\n## Ticket\nPORT-1900\n---\n\nSince that description was written, two new commits have landed on the branch. Update the PR description to cover the new work. Preserve the existing wording and only add bullets for the new commits.",
+      "expected_output": "A PR description that keeps the 'Adds retry logic to the S3 uploader.' line, extends the Summary with bullets for the two new commits (upload_many helper, tests), and keeps the ticket link for PORT-1900.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "gh-unauthenticated",
+      "prompt": "You are in /Users/kshetty/.claude/skills/pr-description-workspace/fixtures/test4-gh-unauth (not a git repo). The user asks: 'Write the PR description for https://github.com/integralads/report-data-processor/pull/847'. Important: for this test, treat the `gh` CLI as not authenticated — assume running `gh auth status` returns 'You are not logged into any GitHub hosts'. Do not actually run `gh auth status` or any `gh` command. Respond based on how the skill should handle this situation.",
+      "expected_output": "The skill stops cleanly and tells the user to run `gh auth login`. It does NOT try to analyze a random local branch, does NOT use WebFetch, does NOT invent a description.",
+      "files": []
+    }
+  ]
+}

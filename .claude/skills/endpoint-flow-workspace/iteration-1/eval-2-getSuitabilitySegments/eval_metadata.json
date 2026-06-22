@@ -1,0 +1,13 @@
+{
+  "eval_id": 2,
+  "eval_name": "getSuitabilitySegments",
+  "prompt": "walk me through LookUpDataService/getSuitabilitySegments in /Users/kshetty/code/ias/fantastic-signals-data-warehouse",
+  "assertions": [
+    { "id": "has-flow-summary", "description": "Output contains a Flow Summary section" },
+    { "id": "has-call-chain", "description": "Output contains a Call Chain section with at least 2 hops" },
+    { "id": "has-db-tables", "description": "Output contains a DB Tables section with at least one table identified" },
+    { "id": "has-mermaid", "description": "Output contains a Mermaid sequence diagram block" },
+    { "id": "mermaid-autonumber", "description": "Mermaid diagram includes autonumber" },
+    { "id": "reaches-dao-layer", "description": "Call chain traces through to the DAO or repository layer" }
+  ]
+}

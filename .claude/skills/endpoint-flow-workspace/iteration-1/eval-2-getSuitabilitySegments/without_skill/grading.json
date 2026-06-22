@@ -1,0 +1,36 @@
+{
+  "eval_id": "eval-2-getSuitabilitySegments",
+  "variant": "without_skill",
+  "expectations": [
+    {
+      "text": "Output contains a Flow Summary section",
+      "passed": false,
+      "evidence": "Missing Flow Summary section"
+    },
+    {
+      "text": "Output contains a Call Chain section with at least 2 hops",
+      "passed": false,
+      "evidence": "Missing Call Chain or insufficient hops"
+    },
+    {
+      "text": "Output contains a DB Tables section with at least one table identified",
+      "passed": false,
+      "evidence": "Missing DB Tables section"
+    },
+    {
+      "text": "Output contains a Mermaid sequence diagram block",
+      "passed": true,
+      "evidence": "Found ```mermaid block"
+    },
+    {
+      "text": "Mermaid diagram includes autonumber",
+      "passed": false,
+      "evidence": "No autonumber directive"
+    },
+    {
+      "text": "Call chain traces through to the DAO or repository layer",
+      "passed": true,
+      "evidence": "Found DAO/Repository reference"
+    }
+  ]
+}

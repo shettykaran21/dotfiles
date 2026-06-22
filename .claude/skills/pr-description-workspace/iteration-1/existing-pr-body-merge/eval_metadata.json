@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "existing-pr-body-merge",
+  "prompt": "You are in a git repo at /Users/kshetty/.claude/skills/pr-description-workspace/fixtures/test3-existing-body. The current branch is PORT-1900-retry-logic. Existing PR body provided; two new commits since. Update the PR description preserving existing wording and only adding bullets for new commits.",
+  "assertions": [
+    {"text": "Preserves the literal sentence 'Adds retry logic to the S3 uploader.'"},
+    {"text": "Mentions upload_many OR batch upload (the second new commit)"},
+    {"text": "Mentions tests / test coverage (the third new commit)"},
+    {"text": "Ticket section still references PORT-1900"},
+    {"text": "Does not duplicate the retry-logic content as a new bullet (since it's already covered)"}
+  ]
+}

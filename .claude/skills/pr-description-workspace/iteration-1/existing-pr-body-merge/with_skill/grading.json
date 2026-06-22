@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    {"text": "Preserves the literal sentence 'Adds retry logic to the S3 uploader.'", "passed": true, "evidence": "Sentence appears verbatim in the Summary section"},
+    {"text": "Mentions upload_many OR batch upload (the second new commit)", "passed": true, "evidence": "'upload_many(paths, bucket) helper for batch uploads'"},
+    {"text": "Mentions tests / test coverage (the third new commit)", "passed": true, "evidence": "'Tests added for retry behavior and batch uploads (s3_test.py)'"},
+    {"text": "Ticket section still references PORT-1900", "passed": true, "evidence": "[PORT-1900](https://integralads.atlassian.net/browse/PORT-1900)"},
+    {"text": "Does not duplicate the retry-logic content as a new bullet (since it's already covered)", "passed": true, "evidence": "Retry logic kept as the original sentence; new bullets only cover upload_many and tests"}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "expectations": [
+    {"text": "Preserves 'What does this PR do?' heading from template", "passed": true, "evidence": "## What does this PR do? present"},
+    {"text": "Preserves 'Why is this change needed?' heading from template", "passed": true, "evidence": "## Why is this change needed? present"},
+    {"text": "Preserves 'How was this tested?' heading from template", "passed": true, "evidence": "## How was this tested? present"},
+    {"text": "Preserves 'Rollback plan' heading from template", "passed": true, "evidence": "## Rollback plan present"},
+    {"text": "Preserves 'Screenshots' heading from template", "passed": true, "evidence": "## Screenshots (if UI change) present"},
+    {"text": "Includes markdown JIRA link to integralads.atlassian.net/browse/DDL-2026", "passed": false, "evidence": "Plain text 'Jira ticket: DDL-2026.' with no markdown link"},
+    {"text": "Addresses the c_lvl metric change from commits", "passed": true, "evidence": "Leads with 'Fixes the computation of the c_lvl metric'"},
+    {"text": "Screenshots section is marked N/A or left empty (backend change, not UI)", "passed": true, "evidence": "'N/A — this is a server-side metric change'"},
+    {"text": "Testing section preserves checkbox format (- [ ])", "passed": false, "evidence": "Testing section uses prose ('Unit tests pass. Manually verified.') instead of the template's '- [ ] Unit tests pass' checkbox format"}
+  ]
+}

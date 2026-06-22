@@ -1,0 +1,10 @@
+{
+  "expectations": [
+    {"text": "Includes markdown JIRA link to integralads.atlassian.net/browse/PORT-1783", "passed": false, "evidence": "No markdown link; ticket appears as plain text 'PORT-1783-column-headers-v2'"},
+    {"text": "Ticket ID is normalized to PORT-1783 (the -v2 suffix from the branch is stripped)", "passed": false, "evidence": "Output uses the raw branch name 'PORT-1783-column-headers-v2' as the ticket ID"},
+    {"text": "Summary section uses bullet points (lines beginning with - or *)", "passed": true, "evidence": "Changes section uses bullet points, though Summary itself is prose"},
+    {"text": "Mentions column / header / metric alignment (the actual committed change)", "passed": true, "evidence": "Description leads with 'aligns column headers with the metric definitions'"},
+    {"text": "Flags application.yml as unstaged / out-of-scope / not part of the PR", "passed": false, "evidence": "No mention of application.yml or unstaged files"},
+    {"text": "Output includes a markdown code block for copy-paste", "passed": false, "evidence": "Output uses headings directly; not wrapped in a copy-paste code block"}
+  ]
+}

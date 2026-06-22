@@ -1,0 +1,13 @@
+{
+  "eval_id": 0,
+  "eval_name": "current-branch-no-template",
+  "prompt": "You are in a git repo at /Users/kshetty/.claude/skills/pr-description-workspace/fixtures/test1-no-template. The current branch is PORT-1783-column-headers-v2. Write a pull request description for this branch.",
+  "assertions": [
+    {"text": "Includes markdown JIRA link to integralads.atlassian.net/browse/PORT-1783"},
+    {"text": "Ticket ID is normalized to PORT-1783 (the -v2 suffix from the branch is stripped)"},
+    {"text": "Summary section uses bullet points (lines beginning with - or *)"},
+    {"text": "Mentions column / header / metric alignment (the actual committed change)"},
+    {"text": "Flags application.yml as unstaged / out-of-scope / not part of the PR"},
+    {"text": "Output includes a markdown code block for copy-paste"}
+  ]
+}

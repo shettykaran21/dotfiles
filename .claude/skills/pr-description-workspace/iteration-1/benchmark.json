@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "skill_name": "pr-description",
+    "skill_path": "/Users/kshetty/.claude/skills/pr-description",
+    "executor_model": "claude-sonnet-4-6",
+    "analyzer_model": "claude-sonnet-4-6",
+    "timestamp": "2026-05-12T18:52:22Z",
+    "evals_run": [
+      "current-branch-no-template",
+      "current-branch-with-template",
+      "existing-pr-body-merge",
+      "gh-unauthenticated"
+    ],
+    "runs_per_configuration": 1,
+    "caveat": "Runs were generated inline by the main agent rather than via isolated subagents, because the subagent sandbox denied Bash access to the fixtures directory. The outputs reflect how the skill prompt steers behavior, but do not capture full tool-use latency/token cost of a real subagent run."
+  },
+  "runs": [
+    {
+      "run_id": "current-branch-no-template-with_skill",
+      "eval_id": "current-branch-no-template",
+      "configuration": "with_skill",
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "total": 6
+      },
+      "expectations": [
+        {"text": "Includes markdown JIRA link to integralads.atlassian.net/browse/PORT-1783", "passed": true, "evidence": "Contains `[PORT-1783](https://integralads.atlassian.net/browse/PORT-1783)`"},
+        {"text": "Ticket ID is normalized to PORT-1783 (the -v2 suffix from the branch is stripped)", "passed": true, "evidence": "Ticket ID appears as PORT-1783 only; no -v2 variant in output"},
+        {"text": "Summary section uses bullet points (lines beginning with - or *)", "passed": true, "evidence": "## Summary contains bullets"},
+        {"text": "Mentions column / header / metric alignment (the actual committed change)", "passed": true, "evidence": "First bullet: 'Align column headers with metrics in config.json'"},
+        {"text": "Flags application.yml as unstaged / out-of-scope / not part of the PR", "passed": true, "evidence": "Note that src/main/resources/application.yml has unstaged changes out-of-scope"},
+        {"text": "Output includes a markdown code block for copy-paste", "passed": true, "evidence": "Output wrapped in ```markdown ... ``` fenced block"}
+      ]
+    },
+    {
+      "run_id": "current-branch-no-template-without_skill",
+      "eval_id": "current-branch-no-template",
+      "configuration": "without_skill",
+      "result": {
+        "pass_rate": 0.333,
+        "passed": 2,
+        "total": 6
+      },
+      "expectations": [
+        {"text": "Includes markdown JIRA link to integralads.atlassian.net/browse/PORT-1783", "passed": false, "evidence": "No markdown link; ticket appears as plain text 'PORT-1783-column-headers-v2'"},
+        {"text": "Ticket ID is normalized to PORT-1783 (the -v2 suffix from the branch is stripped)", "passed": false, "evidence": "Output uses the raw branch name 'PORT-1783-column-headers-v2' as the ticket ID"},
+        {"text": "Summary section uses bullet points (lines beginning with - or *)", "passed": true, "evidence": "Changes section uses bullet points"},
+        {"text": "Mentions column / header / metric alignment (the actual committed change)", "passed": true, "evidence": "Description leads with 'aligns column headers with the metric definitions'"},
+        {"text": "Flags application.yml as unstaged / out-of-scope / not part of the PR", "passed": false, "evidence": "No mention of application.yml or unstaged files"},
+        {"text": "Output includes a markdown code block for copy-paste", "passed": false, "evidence": "Output uses headings directly; not wrapped in a copy-paste code block"}
+      ]
+    },
+    {
+      "run_id": "current-branch-with-template-with_skill",
+      "eval_id": "current-branch-with-template",
+      "configuration": "with_skill",
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 9,
+        "total": 9
+      },
+      "expectations": [
+        {"text": "Preserves 'What does this PR do?' heading from template", "passed": true, "evidence": "## What does this PR do? present"},
+        {"text": "Preserves 'Why is this change needed?' heading from template", "passed": true, "evidence": "## Why is this change needed? present"},
+        {"text": "Preserves 'How was this tested?' heading from template", "passed": true, "evidence": "## How was this tested? present"},
+        {"text": "Preserves 'Rollback plan' heading from template", "passed": true, "evidence": "## Rollback plan present"},
+        {"text": "Preserves 'Screenshots' heading from template", "passed": true, "evidence": "## Screenshots (if UI change) present"},
+        {"text": "Includes markdown JIRA link to integralads.atlassian.net/browse/DDL-2026", "passed": true, "evidence": "Contains `[DDL-2026](https://integralads.atlassian.net/browse/DDL-2026)`"},
+        {"text": "Addresses the c_lvl metric change from commits", "passed": true, "evidence": "'Fixes the c_lvl metric calculation in Metric.java'"},
+        {"text": "Screenshots section is marked N/A or left empty (backend change, not UI)", "passed": true, "evidence": "'_N/A_ — backend change.'"},
+        {"text": "Testing section preserves checkbox format (- [ ])", "passed": true, "evidence": "Contains '- [ ] Unit tests pass' and '- [ ] Manually verified'"}
+      ]
+    },
+    {
+      "run_id": "current-branch-with-template-without_skill",
+      "eval_id": "current-branch-with-template",
+      "configuration": "without_skill",
+      "result": {
+        "pass_rate": 0.778,
+        "passed": 7,
+        "total": 9
+      },
+      "expectations": [
+        {"text": "Preserves 'What does this PR do?' heading from template", "passed": true, "evidence": "## What does this PR do? present"},
+        {"text": "Preserves 'Why is this change needed?' heading from template", "passed": true, "evidence": "## Why is this change needed? present"},
+        {"text": "Preserves 'How was this tested?' heading from template", "passed": true, "evidence": "## How was this tested? present"},
+        {"text": "Preserves 'Rollback plan' heading from template", "passed": true, "evidence": "## Rollback plan present"},
+        {"text": "Preserves 'Screenshots' heading from template", "passed": true, "evidence": "## Screenshots (if UI change) present"},
+        {"text": "Includes markdown JIRA link to integralads.atlassian.net/browse/DDL-2026", "passed": false, "evidence": "Plain text 'Jira ticket: DDL-2026.' with no markdown link"},
+        {"text": "Addresses the c_lvl metric change from commits", "passed": true, "evidence": "Leads with 'Fixes the computation of the c_lvl metric'"},
+        {"text": "Screenshots section is marked N/A or left empty (backend change, not UI)", "passed": true, "evidence": "'N/A — this is a server-side metric change'"},
+        {"text": "Testing section preserves checkbox format (- [ ])", "passed": false, "evidence": "Testing section uses prose instead of the template's '- [ ] Unit tests pass' checkbox format"}
+      ]
+    },
+    {
+      "run_id": "existing-pr-body-merge-with_skill",
+      "eval_id": "existing-pr-body-merge",
+      "configuration": "with_skill",
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "total": 5
+      },
+      "expectations": [
+        {"text": "Preserves the literal sentence 'Adds retry logic to the S3 uploader.'", "passed": true, "evidence": "Sentence appears verbatim in the Summary section"},
+        {"text": "Mentions upload_many OR batch upload (the second new commit)", "passed": true, "evidence": "'upload_many(paths, bucket) helper for batch uploads'"},
+        {"text": "Mentions tests / test coverage (the third new commit)", "passed": true, "evidence": "'Tests added for retry behavior and batch uploads (s3_test.py)'"},
+        {"text": "Ticket section still references PORT-1900", "passed": true, "evidence": "[PORT-1900](https://integralads.atlassian.net/browse/PORT-1900)"},
+        {"text": "Does not duplicate the retry-logic content as a new bullet (since it's already covered)", "passed": true, "evidence": "Retry logic kept as the original sentence; new bullets only cover upload_many and tests"}
+      ]
+    },
+    {
+      "run_id": "existing-pr-body-merge-without_skill",
+      "eval_id": "existing-pr-body-merge",
+      "configuration": "without_skill",
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "total": 5
+      },
+      "expectations": [
+        {"text": "Preserves the literal sentence 'Adds retry logic to the S3 uploader.'", "passed": false, "evidence": "Sentence was rewritten as 'This PR adds retry logic to the S3 uploader and extends it with batch-upload support'"},
+        {"text": "Mentions upload_many OR batch upload (the second new commit)", "passed": true, "evidence": "'Introduced upload_many(paths, bucket)'"},
+        {"text": "Mentions tests / test coverage (the third new commit)", "passed": true, "evidence": "'Added s3_test.py with test stubs'"},
+        {"text": "Ticket section still references PORT-1900", "passed": true, "evidence": "'PORT-1900' appears under ## Ticket"},
+        {"text": "Does not duplicate the retry-logic content as a new bullet (since it's already covered)", "passed": false, "evidence": "Explicitly re-states the retry logic as a bullet — duplicates what the original body already covered"}
+      ]
+    },
+    {
+      "run_id": "gh-unauthenticated-with_skill",
+      "eval_id": "gh-unauthenticated",
+      "configuration": "with_skill",
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "total": 4
+      },
+      "expectations": [
+        {"text": "Tells the user to run gh auth login", "passed": true, "evidence": "'run `gh auth login` and I'll pick this up'"},
+        {"text": "Does NOT produce a full PR description markdown", "passed": true, "evidence": "Output contains only the stop message, no description"},
+        {"text": "Does NOT fall back to scraping / WebFetch / webpage fetching", "passed": true, "evidence": "Explicitly rules out WebFetch: 'WebFetch can't read the repo (it's private)'"},
+        {"text": "Does NOT pretend to analyze a local branch the user didn't ask about", "passed": true, "evidence": "Explicitly rules out local-branch fallback: 'silently swapping targets is worse than no answer'"}
+      ]
+    },
+    {
+      "run_id": "gh-unauthenticated-without_skill",
+      "eval_id": "gh-unauthenticated",
+      "configuration": "without_skill",
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "total": 4
+      },
+      "expectations": [
+        {"text": "Tells the user to run gh auth login", "passed": true, "evidence": "'Run `gh auth login` to authenticate the GitHub CLI'"},
+        {"text": "Does NOT produce a full PR description markdown", "passed": false, "evidence": "Produces a placeholder PR description with Description / Changes / Testing / Rollback sections"},
+        {"text": "Does NOT fall back to scraping / WebFetch / webpage fetching", "passed": true, "evidence": "No WebFetch attempt; asks user to paste diff instead"},
+        {"text": "Does NOT pretend to analyze a local branch the user didn't ask about", "passed": true, "evidence": "Does not reference a local branch"}
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0},
+      "total_passed": 24,
+      "total_assertions": 24
+    },
+    "without_skill": {
+      "pass_rate": {"mean": 0.615, "stddev": 0.177, "min": 0.333, "max": 0.778},
+      "total_passed": 15,
+      "total_assertions": 24
+    },
+    "delta": {
+      "pass_rate": "+0.385",
+      "notes": "Skill lifts pass rate by 38.5 percentage points across all 4 scenarios. Time/token data not captured because runs were generated inline by the main agent (subagent sandbox denied fixture access)."
+    }
+  },
+  "notes": [
+    "Discriminating assertions (with_skill passes, without_skill fails): JIRA markdown link (both Test 1 and Test 2), branch-suffix normalization (Test 1), unstaged-file flag (Test 1), checkbox format preservation (Test 2), verbatim sentence preservation in merge mode (Test 3), no-duplicate content on merge (Test 3), stop-don't-fabricate on unauth (Test 4), copy-paste code block (Test 1).",
+    "Non-discriminating assertions (both pass): template headings in Test 2 (both with and without skill preserved all 5 headings), basic subject matter (both mentioned c_lvl / column alignment / upload_many / tests), ticket ID presence (both kept PORT-1900 in Test 3).",
+    "Timing/token data omitted — inline generation skipped the subagent tool-use overhead. A follow-up run with proper subagent sandboxing would be needed to measure cost."
+  ]
+}

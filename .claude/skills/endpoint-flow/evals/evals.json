@@ -1,0 +1,47 @@
+{
+  "skill_name": "endpoint-flow",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "trace the gRPC flow for DataService/getDimensionData in /Users/kshetty/code/ias/fantastic-signals-data-warehouse",
+      "expected_output": "Structured breakdown with call chain, DB tables, external deps, auth/middleware, and a Mermaid sequence diagram for the getDimensionData gRPC method",
+      "files": [],
+      "assertions": [
+        { "id": "has-flow-summary", "description": "Output contains a Flow Summary section" },
+        { "id": "has-call-chain", "description": "Output contains a Call Chain section with at least 2 hops" },
+        { "id": "has-db-tables", "description": "Output contains a DB Tables section with at least one table identified" },
+        { "id": "has-mermaid", "description": "Output contains a Mermaid sequence diagram block" },
+        { "id": "mermaid-autonumber", "description": "Mermaid diagram includes autonumber" },
+        { "id": "call-chain-db-annotation", "description": "Call chain annotates DB calls with [DB READ or [DB WRITE" }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "what does DataService/getMetricsDimensionReport do and what tables does it touch? codebase is at /Users/kshetty/code/ias/fantastic-signals-data-warehouse",
+      "expected_output": "Structured breakdown with call chain, DB tables (especially which tables are read for the report), external deps, and a Mermaid sequence diagram for getMetricsDimensionReport",
+      "files": [],
+      "assertions": [
+        { "id": "has-flow-summary", "description": "Output contains a Flow Summary section" },
+        { "id": "has-call-chain", "description": "Output contains a Call Chain section with at least 2 hops" },
+        { "id": "has-db-tables", "description": "Output contains a DB Tables section with at least one table identified" },
+        { "id": "has-mermaid", "description": "Output contains a Mermaid sequence diagram block" },
+        { "id": "mermaid-autonumber", "description": "Mermaid diagram includes autonumber" },
+        { "id": "call-chain-db-annotation", "description": "Call chain annotates DB calls with [DB READ or [DB WRITE" }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "walk me through LookUpDataService/getSuitabilitySegments in /Users/kshetty/code/ias/fantastic-signals-data-warehouse",
+      "expected_output": "Structured breakdown with call chain, DB tables, external deps, auth/middleware, and a Mermaid sequence diagram for getSuitabilitySegments",
+      "files": [],
+      "assertions": [
+        { "id": "has-flow-summary", "description": "Output contains a Flow Summary section" },
+        { "id": "has-call-chain", "description": "Output contains a Call Chain section with at least 2 hops" },
+        { "id": "has-db-tables", "description": "Output contains a DB Tables section with at least one table identified" },
+        { "id": "has-mermaid", "description": "Output contains a Mermaid sequence diagram block" },
+        { "id": "mermaid-autonumber", "description": "Mermaid diagram includes autonumber" },
+        { "id": "reaches-dao-layer", "description": "Call chain traces through to the DAO or repository layer" }
+      ]
+    }
+  ]
+}

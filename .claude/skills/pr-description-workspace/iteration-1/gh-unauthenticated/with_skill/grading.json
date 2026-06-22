@@ -1,0 +1,8 @@
+{
+  "expectations": [
+    {"text": "Tells the user to run gh auth login", "passed": true, "evidence": "'run `gh auth login` and I'll pick this up'"},
+    {"text": "Does NOT produce a full PR description markdown", "passed": true, "evidence": "Output contains only the stop message, no description"},
+    {"text": "Does NOT fall back to scraping / WebFetch / webpage fetching", "passed": true, "evidence": "Explicitly rules out WebFetch: 'WebFetch can't read the repo (it's private)'"},
+    {"text": "Does NOT pretend to analyze a local branch the user didn't ask about", "passed": true, "evidence": "Explicitly rules out local-branch fallback: 'silently swapping targets is worse than no answer'"}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    {"text": "Preserves the literal sentence 'Adds retry logic to the S3 uploader.'", "passed": false, "evidence": "Sentence was rewritten as 'This PR adds retry logic to the S3 uploader and extends it with batch-upload support'"},
+    {"text": "Mentions upload_many OR batch upload (the second new commit)", "passed": true, "evidence": "'Introduced upload_many(paths, bucket)'"},
+    {"text": "Mentions tests / test coverage (the third new commit)", "passed": true, "evidence": "'Added s3_test.py with test stubs'"},
+    {"text": "Ticket section still references PORT-1900", "passed": true, "evidence": "'PORT-1900' appears under ## Ticket"},
+    {"text": "Does not duplicate the retry-logic content as a new bullet (since it's already covered)", "passed": false, "evidence": "Explicitly re-states 'The existing upload() already has retry logic (max_retries=3, exponential backoff)' as a bullet — duplicates what the original body already covered"}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "expectations": [
+    {"text": "Preserves 'What does this PR do?' heading from template", "passed": true, "evidence": "## What does this PR do? present"},
+    {"text": "Preserves 'Why is this change needed?' heading from template", "passed": true, "evidence": "## Why is this change needed? present"},
+    {"text": "Preserves 'How was this tested?' heading from template", "passed": true, "evidence": "## How was this tested? present"},
+    {"text": "Preserves 'Rollback plan' heading from template", "passed": true, "evidence": "## Rollback plan present"},
+    {"text": "Preserves 'Screenshots' heading from template", "passed": true, "evidence": "## Screenshots (if UI change) present"},
+    {"text": "Includes markdown JIRA link to integralads.atlassian.net/browse/DDL-2026", "passed": true, "evidence": "Contains `[DDL-2026](https://integralads.atlassian.net/browse/DDL-2026)`"},
+    {"text": "Addresses the c_lvl metric change from commits", "passed": true, "evidence": "'Fixes the c_lvl metric calculation in Metric.java'"},
+    {"text": "Screenshots section is marked N/A or left empty (backend change, not UI)", "passed": true, "evidence": "'_N/A_ — backend change.'"},
+    {"text": "Testing section preserves checkbox format (- [ ])", "passed": true, "evidence": "Contains '- [ ] Unit tests pass' and '- [ ] Manually verified'"}
+  ]
+}
