@@ -16,6 +16,8 @@ brew "gh"
 brew "git"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
+# LLM inference in C/C++
+brew "llama.cpp"
 # Java-based project management
 brew "maven"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -24,6 +26,8 @@ brew "neovim"
 brew "nginx"
 # Smart, Fast and Extensible Build System
 brew "nx"
+# AI coding agent, built for the terminal
+brew "opencode"
 # Pretty, minimal and fast ZSH prompt
 brew "pure"
 # Login and retrieve AWS temporary credentials using a SAML IDP
@@ -34,6 +38,8 @@ brew "tmux"
 brew "uv"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s", trusted: true
+# View, print, and comment on PDF documents
+cask "adobe-acrobat-reader"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Open source IDE for exploring and testing APIs
@@ -130,4 +136,5 @@ vscode "vscode-icons-team.vscode-icons"
 vscode "vscodevim.vim"
 vscode "zhuangtongfa.material-theme"
 uv "sqlfluff"
+npm "@benborla29/mcp-server-mysql"
 npm "corepack"
