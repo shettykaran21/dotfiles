@@ -1,21 +1,38 @@
 {
   "apiKeyHelper": "/Users/kshetty/.claude/databricks-api-key-helper.sh",
   "env": {
-    "ENABLE_TOOL_SEARCH": "false",
-    "ANTHROPIC_BASE_URL": "https://ias-sandbox-dev.cloud.databricks.com/serving-endpoints/anthropic",
-    "ANTHROPIC_MODEL": "claude_code_sonnet_4_6",
-    "ANTHROPIC_API_URL": "https://ias-sandbox-dev.cloud.databricks.com/serving-endpoints/claude_code_sonnet_4_6/invocations",
-    "ANTHROPIC_CUSTOM_HEADERS": "x-databricks-disable-beta-headers: true",
+    "ENABLE_TOOL_SEARCH": "true",
+    "ANTHROPIC_BASE_URL": "https://ias-sandbox-dev.cloud.databricks.com/ai-gateway/anthropic",
+    "ANTHROPIC_MODEL": "ias-claude-sonnet-5",
+    "ANTHROPIC_CUSTOM_HEADERS": "x-databricks-use-coding-agent-mode: true",
     "DATABRICKS_WORKSPACE_URL": "https://ias-sandbox-dev.cloud.databricks.com",
     "DATABRICKS_PROFILE": "claude",
-    "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1",
+    "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "0",
     "CLAUDE_CODE_API_KEY_HELPER_TTL_MS": "30000",
     "CLAUDE_CODE_USE_BEDROCK": "0",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude_code_haiku_4_5",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude_code_sonnet_4_6",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude_code_opus_4_8"
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "ias-claude-haiku-4-5",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "ias-claude-sonnet-5",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "ias-claude-opus-5"
   },
-  "model": "claude_code_sonnet_4_6",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Bash(find *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(grep *)",
+      "Edit(~/code/ias/k8s-tenant-*/**)",
+      "Bash(git -C ~/code/ias/k8s-tenant-crt *)",
+      "Bash(git -C ~/code/ias/k8s-tenant-fantastic-signals-platform *)",
+      "Bash(git -C ~/code/ias/k8s-tenant-programmatic-reporting *)"
+    ],
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "WebSearch"
+    ]
+  },
+  "model": "sonnet",
   "statusLine": {
     "type": "command",
     "command": "sh /Users/kshetty/.claude/statusline-command.sh"
@@ -25,15 +42,44 @@
     "skill-creator@claude-plugins-official": true,
     "jenkins-debug@ias-claude-code-skills": true,
     "atlassian@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true
+    "code-review@claude-plugins-official": true,
+    "i-have-adhd@i-have-adhd": true,
+    "playwright@claude-plugins-official": true,
+    "mattpocock-skills@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "ias-claude-code-skills": {
       "source": {
+        "source": "git",
+        "url": "https://github.com/integralads/ias-claude-code-skills.git"
+      },
+      "autoUpdate": true
+    },
+    "i-have-adhd": {
+      "source": {
         "source": "github",
-        "repo": "integralads/ias-claude-code-skills"
+        "repo": "ayghri/i-have-adhd"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
       }
     }
   },
-  "theme": "auto"
+  "theme": "auto",
+  "preferredNotifChannel": "terminal_bell",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":\"For any web search, use the mcp__web_search__web_search tool directly (load its schema via ToolSearch if it is deferred). Do not call the built-in WebSearch tool - it is blocked in this environment and will always fail.\"}}'"
+          }
+        ]
+      }
+    ]
+  }
 }
