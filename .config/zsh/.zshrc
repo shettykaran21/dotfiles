@@ -118,6 +118,8 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # uv
 export PATH="/Users/kshetty/.local/bin:$PATH"
 
+export PATH="/opt/homebrew/bin:$PATH"
+
 # pure theme
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
