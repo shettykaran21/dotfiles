@@ -1,5 +1,8 @@
 tap "databricks/tap"
 tap "derailed/k9s"
+tap "oven-sh/bun"
+# CLI tool for working with Architecture Decision Records
+brew "adr-tools"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
@@ -14,20 +17,30 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Like cURL, but for gRPC
+brew "grpcurl"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
+# Simple terminal UI for git commands
+brew "lazygit"
 # LLM inference in C/C++
 brew "llama.cpp"
 # Java-based project management
 brew "maven"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
 # Smart, Fast and Extensible Build System
 brew "nx"
+# Create, run, and share large language models (LLMs)
+brew "ollama", restart_service: :changed
 # AI coding agent, built for the terminal
 brew "opencode"
+# AI agent toolkit
+brew "pi-coding-agent"
 # Pretty, minimal and fast ZSH prompt
 brew "pure"
 # Login and retrieve AWS temporary credentials using a SAML IDP
@@ -38,6 +51,8 @@ brew "tmux"
 brew "uv"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s", trusted: true
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun", trusted: true
 # View, print, and comment on PDF documents
 cask "adobe-acrobat-reader"
 # Web browser focusing on privacy
@@ -50,8 +65,6 @@ cask "claude-code@latest"
 cask "cursor"
 # Universal database tool and SQL client
 cask "dbeaver-community"
-# App to build and share containerised applications and microservices
-cask "docker-desktop"
 cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-monaspace-var"
@@ -71,6 +84,8 @@ cask "microsoft-office"
 cask "notion"
 # Collaboration platform for API development
 cask "postman"
+# MySQL/MariaDB database management
+cask "sequel-ace"
 # Music streaming service
 cask "spotify"
 # Open-source code editor
@@ -136,5 +151,5 @@ vscode "vscode-icons-team.vscode-icons"
 vscode "vscodevim.vim"
 vscode "zhuangtongfa.material-theme"
 uv "sqlfluff"
-npm "@benborla29/mcp-server-mysql"
-npm "corepack"
+uv "ucode", source: "git+https://github.com/databricks/ucode"
+npm "@playwright/cli"
