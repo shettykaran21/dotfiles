@@ -8,6 +8,7 @@ description: >
   use the current git branch). Trigger for phrases like "write a PR
   description", "fill in the PR description", "draft the PR body",
   "update the description on <PR URL>", or "pull request description".
+allowed-tools: Bash(gh pr view*), Bash(gh pr diff*), Bash(gh auth status*), Bash(command -v gh*), Bash(git log*), Bash(git diff*), Bash(git status*), Bash(git symbolic-ref*), Read, Glob
 ---
 
 # PR description writer

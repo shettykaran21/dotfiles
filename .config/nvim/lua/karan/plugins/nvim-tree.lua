@@ -8,6 +8,9 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
+    -- dim the indent guide lines instead of the default full-brightness box-drawing color
+    vim.api.nvim_set_hl(0, "NvimTreeIndentMarker", { link = "Comment" })
+
     nvimtree.setup({
       view = {
         width = 50,
@@ -19,6 +22,9 @@ return {
           enable = true,
         },
         icons = {
+          show = {
+            git = false,
+          },
           glyphs = {
             folder = {
               arrow_closed = "▸", -- arrow when folder is closed
@@ -43,8 +49,11 @@ return {
       git = {
         ignore = false,
       },
+      update_focused_file = {
+        enable = true,
+      }
     })
-    
+
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
 

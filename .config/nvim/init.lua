@@ -1017,3 +1017,5 @@
 
 require 'karan.core'
 require 'karan.lazy'
+require 'karan.lsp'
+
